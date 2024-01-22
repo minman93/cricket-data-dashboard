@@ -3312,3 +3312,4 @@ const players = [
     bowling_type: "seam",
   },
 ];
+module.exports = players;
