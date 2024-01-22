@@ -11,7 +11,8 @@ export default function AllPlayers() {
   useEffect(() => {
     const fetchPlayers = async () => {
       try {
-        const response = await axios.get("'http://localhost:3000/api/players'");
+        const response = await axios.get("http://localhost:3000/api/players");
+        console.log(response, "<--------- RESPONSE");
         setPlayers(response.data);
       } catch (error) {
         console.error("Error fetching players:", error);
@@ -25,7 +26,7 @@ export default function AllPlayers() {
       <div>
         <div>
           {players.map((player) => (
-            <div key={player.id}>{player.name} </div>
+            <div key={player.id}>{player.name}</div>
           ))}
         </div>
       </div>
