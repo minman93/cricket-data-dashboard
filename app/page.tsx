@@ -6,5 +6,4 @@ export default function Home() {
       <p className={`${roboto.className} text-2xl`}>Home Page</p>
     </div>
   );
-};
-
+}
