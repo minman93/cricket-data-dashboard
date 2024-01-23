@@ -12,7 +12,6 @@ export default function AllPlayers() {
     const fetchPlayers = async () => {
       try {
         const response = await axios.get("http://localhost:3000/api/players");
-        console.log(response, "<--------- RESPONSE");
         setPlayers(response.data);
       } catch (error) {
         console.error("Error fetching players:", error);
@@ -26,7 +25,16 @@ export default function AllPlayers() {
       <div>
         <div>
           {players.map((player) => (
-            <div key={player.id}>{player.name}</div>
+            <div
+              className="max-w-sm rounded overflow-hidden shadow-md"
+              key={player.id}
+            >
+              {" "}
+              <div className="px-6 py-4">
+                <div className="font-bold text-xl mb-2">{player.name}</div>
+                <p className="text-gray-700 text-base">{player.country}</p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
