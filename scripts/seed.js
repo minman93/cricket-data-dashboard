@@ -1,7 +1,7 @@
 const db = require("../app/lib/connection");
 const format = require("pg-format");
 
-const seed = async (players) => {
+const seed = async ({ players }) => {
   try {
     await db.query("DROP TABLE IF EXISTS players CASCADE;");
     console.log("Dropped players table");
