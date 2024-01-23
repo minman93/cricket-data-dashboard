@@ -1,7 +1,8 @@
 import { fetchPlayers } from "../../lib/data";
 import { NextResponse } from "next/server";
 
-export async function GET() {
+
+export async function GET(request: Request) {
   try {
     const players = await fetchPlayers();
     return NextResponse.json(players);
