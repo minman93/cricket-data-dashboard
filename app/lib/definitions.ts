@@ -3,6 +3,6 @@ export type Player = {
   name: string;
   country: string;
   batting_hand: string;
-  bowling_hand: string;
+  bowling_arm: string;
   bowling_type: string;
 };

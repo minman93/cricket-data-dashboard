@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import AllPlayers from "../app/all-players/page";
+import AllPlayers from "../app/players/page";
 
 describe("All Players", () => {
   it("should have All Players text", async () => {

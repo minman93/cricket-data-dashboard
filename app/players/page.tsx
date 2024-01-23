@@ -4,6 +4,7 @@ import { roboto } from "../ui/fonts";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Player } from "../lib/definitions";
+import Link from "next/link";
 
 export default function AllPlayers() {
   const [players, setPlayers] = useState<Player[]>([]);
@@ -30,10 +31,12 @@ export default function AllPlayers() {
               key={player.id}
             >
               {" "}
-              <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">{player.name}</div>
-                <p className="text-gray-700 text-base">{player.country}</p>
-              </div>
+              <Link href={`/players/${player.id}`}>
+                <div className="px-6 py-4">
+                  <div className="font-bold text-xl mb-2">{player.name}</div>
+                  <p className="text-gray-700 text-base">{player.country}</p>
+                </div>
+              </Link>
             </div>
           ))}
         </div>

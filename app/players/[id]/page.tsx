@@ -15,7 +15,7 @@ export default function SinglePlayer({ params }: { params: { id: number } }) {
         country: string;
         batting_hand: string;
         bowling_arm: string;
-        bowling_style: string;
+        bowling_type: string;
       }
   >({
     id: "",
@@ -23,7 +23,7 @@ export default function SinglePlayer({ params }: { params: { id: number } }) {
     country: "",
     batting_hand: "",
     bowling_arm: "",
-    bowling_style: "",
+    bowling_type: "",
   });
 
   useEffect(() => {
@@ -51,8 +51,13 @@ export default function SinglePlayer({ params }: { params: { id: number } }) {
             >
               {" "}
               <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">ID: {params.id}</div>
-                <p className="text-gray-700 text-base"></p>
+                <div className="font-bold text-xl mb-2">
+                  {player.name.toUpperCase()}
+                </div>
+                <p className="text-gray-700 text-base">{player.country}</p>
+                <p className="text-gray-700 text-base">{player.batting_hand}</p>
+                <p className="text-gray-700 text-base">{player.bowling_arm}</p>
+                <p className="text-gray-700 text-base">{player.bowling_type}</p>
               </div>
             </div>
           </div>
