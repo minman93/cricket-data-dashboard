@@ -7,6 +7,7 @@ export async function GET(
 ) {
   try {
     const player = await fetchPlayerById(params.id);
+    console.log(player);
 
     return NextResponse.json(player);
   } catch (error) {

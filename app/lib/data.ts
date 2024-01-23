@@ -12,8 +12,7 @@ export async function fetchPlayers(): Promise<Player[]> {
 }
 export async function fetchPlayerById(id: number): Promise<Player> {
   try {
-    const player = await db.query(`SELECT * FROM players WHERE id = $1`, [id]);
-
+    const player = await db.query(`SELECT * FROM players where id = $1;`, [id]);
     return player.rows[0] as unknown as Player;
   } catch (error) {
     console.error("Database error:", error);

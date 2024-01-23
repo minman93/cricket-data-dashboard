@@ -39,7 +39,7 @@ export default function SinglePlayer({ params }: { params: { id: number } }) {
       }
     };
     fetchPlayer();
-  });
+  }, [id]);
   return (
     <div className={`${roboto.className} text-2xl`}>
       {player && (
