@@ -6,7 +6,6 @@ import axios from "axios";
 import { Player } from "../lib/definitions";
 import Link from "next/link";
 
-
 export default function AllPlayers() {
   const [players, setPlayers] = useState<Player[]>([]);
 
