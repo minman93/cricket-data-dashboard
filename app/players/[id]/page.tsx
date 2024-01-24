@@ -51,9 +51,7 @@ export default function SinglePlayer({ params }: { params: { id: number } }) {
             >
               {" "}
               <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">
-                  {player.name.toUpperCase()}
-                </div>
+                <div className="font-bold text-xl mb-2">{player.name}</div>
                 <p className="text-gray-700 text-base">{player.country}</p>
                 <p className="text-gray-700 text-base">{player.batting_hand}</p>
                 <p className="text-gray-700 text-base">{player.bowling_arm}</p>
