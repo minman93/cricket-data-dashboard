@@ -20,6 +20,7 @@ export default function AllPlayers() {
     };
     fetchPlayers();
   }, []);
+
   return (
     <div className={`${roboto.className} text-2xl`}>
       All Players!
@@ -30,11 +31,12 @@ export default function AllPlayers() {
               className="max-w-sm rounded overflow-hidden shadow-md"
               key={player.id}
             >
-              {" "}
               <Link href={`/players/${player.id}`}>
                 <div className="px-6 py-4">
                   <div className="font-bold text-xl mb-2">{player.name}</div>
-                  <p className="text-gray-700 text-base">{player.country}</p>
+                  <p className="text-gray-700 text-base">
+                    {player.t20BattingAverage}
+                  </p>
                 </div>
               </Link>
             </div>

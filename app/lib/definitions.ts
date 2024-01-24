@@ -5,4 +5,17 @@ export type Player = {
   batting_hand: string;
   bowling_arm: string;
   bowling_type: string;
+  t20BattingMatches: number | null;
+  t20BattingInnings: number | null;
+  t20BattingNotOut: number | null;
+  t20BattingRuns: number | null;
+  t20BattingHighScore: string | null;
+  t20BattingAverage?: number | null;
+  t20BattingBallsFaced: number | null;
+  t20BattingStrikeRate: number | null;
+  t20BattingCenturies: number | null;
+  t20BattingHalfCenturies: number | null;
+  t20BattingDucks: number | null;
+  t20BattingFours: number | null;
+  t20BattingSixes: number | null;
 };

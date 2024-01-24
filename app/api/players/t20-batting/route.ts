@@ -1,9 +1,9 @@
-import { fetchPlayers } from "../../lib/data";
+import { fetchPlayersWithT20Data } from "../../../lib/data";
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
   try {
-    const players = await fetchPlayers();
+    const players = await fetchPlayersWithT20Data();
 
     return NextResponse.json(players);
   } catch (error) {
