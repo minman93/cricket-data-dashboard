@@ -4,7 +4,6 @@ import { roboto } from "../ui/fonts";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Player } from "../lib/definitions";
-import Link from "next/link";
 
 export default function AllPlayers() {
   const [players, setPlayers] = useState<Player[]>([]);
@@ -13,7 +12,9 @@ export default function AllPlayers() {
     const fetchPlayers = async () => {
       try {
         const response = await axios.get("http://localhost:3000/api/players");
+
         setPlayers(response.data);
+        console.log(players);
       } catch (error) {
         console.error("Error fetching players:", error);
       }
@@ -22,26 +23,21 @@ export default function AllPlayers() {
   }, []);
 
   return (
-    <div className={`${roboto.className} text-2xl`}>
-      All Players!
-      <div>
-        <div>
-          {players.map((player) => (
-            <div
-              className="max-w-sm rounded overflow-hidden shadow-md"
-              key={player.id}
-            >
-              <Link href={`/players/${player.id}`}>
-                <div className="px-6 py-4">
-                  <div className="font-bold text-xl mb-2">{player.name}</div>
-                  <p className="text-gray-700 text-base">
-                    {player.t20BattingAverage}
-                  </p>
-                </div>
-              </Link>
-            </div>
-          ))}
-        </div>
+    <div className="flex justify-around py-4 w-full h-full bg-gray-800 rounded-md">
+      <h1 className={`${roboto.className} text-4xl font-extrabold text-white`}>
+        All Players
+      </h1>
+      <div className="flex flex-wrap justify-center gap-4">
+        {players.map((player) => (
+          <div
+            key={player.id}
+            className="flex flex-col items-center bg-gray-200 rounded-md p-4"
+          >
+            <h2 className="text-lg font-semibold">{player.name}</h2>
+
+            <p>Team: {player.country}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

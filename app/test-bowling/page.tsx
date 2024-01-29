@@ -6,7 +6,7 @@ import axios from "axios";
 import { Player } from "../lib/definitions";
 import BattingScatterGraph from "../ui/components/BattingScatterGraph";
 
-export default function T20Batting() {
+export default function TestBowling() {
   const [players, setPlayers] = useState<Player[]>([]);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function T20Batting() {
   return (
     <div className="flex justify-around py-4 w-full h-full bg-gray-800 rounded-md">
       <h1 className={`${roboto.className} text-4xl font-extrabold text-white`}>
-        T20 Batting
+        Test Bowling
       </h1>
     </div>
   );
