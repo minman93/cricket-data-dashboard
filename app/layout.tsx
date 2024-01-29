@@ -16,11 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
-      <div className="w-full flex-none md:w-64">
-        <Sidebar />
-      </div>
-      <div className="flex-grow px-3 py-4 md:overflow-y-auto">{children}</div>
-    </div>
+    <html>
+      <body className="flex h-screen flex-col md:flex-row md:overflow-hidden">
+        <div className="w-full flex-none md:w-64">
+          <Sidebar />
+        </div>
+        <div className="flex-grow px-3 py-4 md:overflow-y-auto">{children}</div>
+      </body>
+    </html>
   );
 }

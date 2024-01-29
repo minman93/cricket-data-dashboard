@@ -4,7 +4,6 @@ import { roboto } from "../ui/fonts";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Player } from "../lib/definitions";
-import BattingScatterGraph from "../ui/components/BattingScatterGraph";
 
 export default function T20Bowling() {
   const [players, setPlayers] = useState<Player[]>([]);

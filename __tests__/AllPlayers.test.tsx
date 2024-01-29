@@ -5,7 +5,7 @@ describe("All Players", () => {
   it("should have All Players text", async () => {
     render(<AllPlayers />);
 
-    const homeText = screen.getByText("All Players!");
+    const homeText = screen.getByText("All Players");
     expect(homeText).toBeInTheDocument();
   });
 });
