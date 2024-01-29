@@ -1,4 +1,4 @@
-const db = require("../app/lib/connection");
+const db = require("../connection");
 const format = require("pg-format");
 
 const seed = async ({ players, t20Batting }) => {

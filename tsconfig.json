@@ -28,8 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/lib/connection.js",
-    "app/lib/connection.js",
+    "connection.js",
+    "connection.js",
     "app/login",
     "app/api/players/[id]/route.js"
   ],

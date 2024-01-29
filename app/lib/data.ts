@@ -1,5 +1,5 @@
 import { Player } from "./definitions";
-import db from "./connection";
+import db from "../../connection";
 
 export async function fetchPlayers(): Promise<Player[]> {
   try {
