@@ -12,7 +12,9 @@ export default function AllPlayers() {
   useEffect(() => {
     const fetchPlayers = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/players");
+        const response = await axios.get(
+          "https://cricket-data-dashboard.vercel.app/api/players"
+        );
 
         setPlayers(response.data);
       } catch (error) {
