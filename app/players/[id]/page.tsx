@@ -30,7 +30,7 @@ export default function SinglePlayer({ params }: { params: { id: number } }) {
     const fetchPlayer = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/players/${id}`
+          `https://cricket-data-dashboard.vercel.app/api/players/${id}`
         );
 
         setPlayer(response.data);
