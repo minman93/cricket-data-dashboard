@@ -13,7 +13,7 @@ export default function TestBatting() {
     const fetchPlayers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/players/t20-batting"
+          "https://cricket-data-dashboard.vercel.app/api/players/t20-batting"
         );
         setPlayers(response.data);
       } catch (error) {
@@ -26,7 +26,7 @@ export default function TestBatting() {
   return (
     <div className="flex justify-around py-4 w-full h-full bg-gray-800 rounded-md">
       <h1 className={`${roboto.className} text-4xl font-extrabold text-white`}>
-        Test Bowling
+        Test Batting
       </h1>
     </div>
   );

@@ -5,17 +5,26 @@ export type Player = {
   batting_hand: string;
   bowling_arm: string;
   bowling_type: string;
-  t20BattingMatches: number | null;
-  t20BattingInnings: number | null;
-  t20BattingNotOut: number | null;
-  t20BattingRuns: number | null;
-  t20BattingHighScore: string | null;
-  t20BattingAverage?: number | null;
-  t20BattingBallsFaced: number | null;
-  t20BattingStrikeRate: number | null;
-  t20BattingCenturies: number | null;
-  t20BattingHalfCenturies: number | null;
-  t20BattingDucks: number | null;
-  t20BattingFours: number | null;
-  t20BattingSixes: number | null;
+  t20BattingMatches: number;
+  t20BattingInnings: number;
+  t20BattingNotOut: number;
+  t20BattingRuns: number;
+  t20BattingHighScore: string;
+  t20BattingAverage: number;
+  t20BattingBallsFaced: number;
+  t20BattingStrikeRate: number;
+  t20BattingCenturies: number;
+  t20BattingHalfCenturies: number;
+  t20BattingDucks: number;
+  t20BattingFours: number;
+  t20BattingSixes: number;
+};
+export type ScatterDataPoint = {
+  x: number | null;
+  y: number | null;
+  name: string | null;
+};
+
+export type GraphDataPoints = {
+  data: ScatterDataPoint[];
 };
