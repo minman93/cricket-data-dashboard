@@ -1,43 +1,104 @@
+import { ScatterDataPoint, GraphDataPoints } from "../../lib/definitions";
+
+import React from "react";
 import {
-  ScatterChart,
-  Scatter,
-  XAxis,
-  YAxis,
-  CartesianGrid,
+  Chart,
+  ScatterController,
+  LinearScale,
+  Title,
   Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+  CategoryScale,
+  PointElement,
+  ChartOptions,
+  Point,
+} from "chart.js";
 
-const data = [
-  { x: 100, y: 200, z: 200 },
-  { x: 120, y: 100, z: 260 },
-  { x: 170, y: 300, z: 400 },
-  { x: 140, y: 250, z: 280 },
-  { x: 150, y: 400, z: 500 },
-  { x: 110, y: 280, z: 200 },
-];
+Chart.register(
+  ScatterController,
+  LinearScale,
+  Title,
+  Tooltip,
+  CategoryScale,
+  PointElement
+);
 
-export default function BattingScatterGraph({
-  data: {},
-  xAxisKey: {},
-  yAxisKey: {},
-}) {
-  return (
-    <ResponsiveContainer width="100%" height={400}>
-      <ScatterChart
-        margin={{
-          top: 20,
-          right: 20,
-          bottom: 20,
-          left: 20,
-        }}
-      >
-        <CartesianGrid />
-        <XAxis type="number" dataKey="x" name="stature" unit="cm" />
-        <YAxis type="number" dataKey="y" name="weight" unit="kg" />
-        <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-        <Scatter name="A school" data={data} fill="#8884d8" />
-      </ScatterChart>
-    </ResponsiveContainer>
-  );
+import { Scatter } from "react-chartjs-2";
+
+export function BattingScatterGraph({ data }: GraphDataPoints) {
+  const scatterData = {
+    datasets: [
+      {
+        label: "T20 Batting Data",
+        data: data,
+        backgroundColor: "rgba(255, 99, 132, 1)",
+        borderColor: "rgba(255, 99, 132, 1)",
+        borderWidth: 3,
+      },
+    ],
+  };
+  const scatterOptions: ChartOptions<"scatter"> = {
+    scales: {
+      x: {
+        type: "linear" as "linear",
+        position: "bottom",
+        title: {
+          display: true,
+          text: "Strike Rate",
+          color: "#FFFFFF",
+          font: {
+            size: 16,
+          },
+        },
+        ticks: {
+          color: "#FFFFFF",
+          font: {
+            size: 16,
+          },
+        },
+        grid: {
+          color: "#FFFFFF",
+          lineWidth: 0.25,
+        },
+      },
+      y: {
+        type: "linear" as "linear",
+        position: "left",
+        title: {
+          display: true,
+          text: "Total Runs",
+          color: "#FFFFFF",
+          font: {
+            size: 16,
+          },
+        },
+        ticks: {
+          color: "#FFFFFF",
+          font: {
+            size: 16,
+          },
+        },
+        grid: {
+          color: "#FFFFFF",
+          lineWidth: 0.25,
+        },
+      },
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            const dataPoint: ScatterDataPoint = context.dataset.data[
+              context.dataIndex
+            ] as ScatterDataPoint;
+
+            return `${dataPoint.name}: (${dataPoint.x}, ${dataPoint.y})`;
+          },
+        },
+        bodyFont: {
+          size: 16,
+        },
+      },
+    },
+  };
+  return <Scatter data={scatterData} options={scatterOptions} />;
 }
