@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Player } from "../lib/definitions";
 
-
 export default function TestBowling() {
   const [players, setPlayers] = useState<Player[]>([]);
 

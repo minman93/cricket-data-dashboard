@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Player, ScatterDataPoint } from "../lib/definitions";
 import React from "react";
-import { BattingScatterGraph } from "../ui/components/BattingScatterGraph";
+import ChartTabs from "../ui/components/ChartTabs";
 
 export default function T20Batting() {
   const [players, setPlayers] = useState<Player[]>([]);
@@ -35,10 +35,9 @@ export default function T20Batting() {
       <h1
         className={`${roboto.className} text-4xl font-extrabold text-white text-center`}
       >
-        T20 Batting
+        T20 Batting!
       </h1>
-
-      <BattingScatterGraph data={graphData} />
+      <ChartTabs data={graphData} />
     </div>
   );
 }

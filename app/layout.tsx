@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
 import "./globals.css";
 import Sidebar from "./ui/components/Sidebar";
 
@@ -18,7 +19,7 @@ export default function RootLayout({
   return (
     <html>
       <body className="flex h-screen flex-col md:flex-row md:overflow-hidden">
-        <div className="w-full flex-none md:w-64">
+        <div className="w-full flex-none md:w-64 sm:w-full">
           <Sidebar />
         </div>
         <div className="flex-grow px-3 py-4 md:overflow-y-auto">{children}</div>

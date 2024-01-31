@@ -1,3 +1,5 @@
+"use client";
+
 import { ScatterDataPoint, GraphDataPoints } from "../../lib/definitions";
 
 import React from "react";
@@ -24,7 +26,7 @@ Chart.register(
 
 import { Scatter } from "react-chartjs-2";
 
-export function BattingScatterGraph({ data }: GraphDataPoints) {
+export function ScatterGraph({ data }: GraphDataPoints) {
   const scatterData = {
     datasets: [
       {
