@@ -9,11 +9,7 @@ import { ScatterDataPoint } from "../../lib/definitions";
 
 export default function ChartTabs({ data }: ScatterDataPoint[]) {
   let tabData = [
-    {
-      value: "Table",
-      label: "Table",
-      content: <DataTable data={data} />,
-    },
+
     {
       value: "One Metric",
       label: "One Metric",
