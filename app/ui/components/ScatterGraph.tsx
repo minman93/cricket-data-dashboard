@@ -34,7 +34,7 @@ export function ScatterGraph({ data }: GraphDataPoints) {
         data: data,
         backgroundColor: "rgba(255, 99, 132, 1)",
         borderColor: "rgba(255, 99, 132, 1)",
-        borderWidth: 3,
+        borderWidth: 5,
       },
     ],
   };
@@ -45,20 +45,20 @@ export function ScatterGraph({ data }: GraphDataPoints) {
         position: "bottom",
         title: {
           display: true,
-          text: "Strike Rate",
-          color: "#FFFFFF",
+          text: "Fours",
+          color: "#000000",
           font: {
             size: 16,
           },
         },
         ticks: {
-          color: "#FFFFFF",
+          color: "#000000",
           font: {
             size: 16,
           },
         },
         grid: {
-          color: "#FFFFFF",
+          color: "#000000",
           lineWidth: 0.25,
         },
       },
@@ -67,20 +67,20 @@ export function ScatterGraph({ data }: GraphDataPoints) {
         position: "left",
         title: {
           display: true,
-          text: "Total Runs",
-          color: "#FFFFFF",
+          text: "Sixes",
+          color: "#000000",
           font: {
             size: 16,
           },
         },
         ticks: {
-          color: "#FFFFFF",
+          color: "000000",
           font: {
             size: 16,
           },
         },
         grid: {
-          color: "#FFFFFF",
+          color: "#000000",
           lineWidth: 0.25,
         },
       },
@@ -97,10 +97,16 @@ export function ScatterGraph({ data }: GraphDataPoints) {
           },
         },
         bodyFont: {
-          size: 16,
+          size: 24,
         },
       },
     },
   };
-  return <Scatter data={scatterData} options={scatterOptions} />;
+  return (
+    <Scatter
+      data={scatterData}
+      options={scatterOptions}
+      style={{ height: 400, width: 400 }}
+    />
+  );
 }

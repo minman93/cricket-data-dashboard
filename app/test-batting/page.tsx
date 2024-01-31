@@ -24,7 +24,7 @@ export default function TestBatting() {
 
   return (
     <div className="flex justify-around py-4 w-full h-full bg-gray-800 rounded-md">
-      <h1 className={`${roboto.className} text-4xl font-extrabold text-white`}>
+      <h1 className={`${roboto.className} text-4xl font-extrabold text-black`}>
         Test Batting
       </h1>
     </div>

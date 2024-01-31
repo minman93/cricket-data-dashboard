@@ -25,15 +25,15 @@ export default function T20Batting() {
   }, []);
 
   const graphData = players.map((player) => ({
-    x: player.t20BattingStrikeRate,
-    y: player.t20BattingRuns,
+    x: player.t20BattingRuns,
+    y: player.t20BattingMatches,
     name: player.name,
   })) as ScatterDataPoint[];
 
   return (
-    <div className="flex flex-col py-4 w-full h-full bg-gray-800 rounded-md">
+    <div className="flex flex-col py-4 w-full h-full bg-white rounded-md">
       <h1
-        className={`${roboto.className} text-4xl font-extrabold text-white text-center`}
+        className={`${roboto.className} text-4xl font-extrabold text-red-500 text-center`}
       >
         T20 Batting!
       </h1>
