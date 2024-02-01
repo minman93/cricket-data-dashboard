@@ -3,13 +3,12 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./Tabs";
 import { ScatterGraph } from "./ScatterGraph";
 import { BarChart } from "./BarChart";
-import { DataTable } from "./Table";
+
 import { HeadToHead } from "./HeadToHead";
 import { ScatterDataPoint } from "../../lib/definitions";
 
 export default function ChartTabs({ data }: ScatterDataPoint[]) {
   let tabData = [
-
     {
       value: "One Metric",
       label: "One Metric",
@@ -31,7 +30,7 @@ export default function ChartTabs({ data }: ScatterDataPoint[]) {
       <Tabs defaultValue={tabData[0].value} className="w-full">
         <TabsList>
           {tabData.map((tab) => (
-            <TabsTrigger key={tab.value} value={tab.value}>
+            <TabsTrigger key={tab.value} value={tab.value} className="w-3/4">
               {tab.label}
             </TabsTrigger>
           ))}

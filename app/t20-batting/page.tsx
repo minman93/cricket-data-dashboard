@@ -31,9 +31,9 @@ export default function T20Batting() {
   })) as ScatterDataPoint[];
 
   return (
-    <div className="flex flex-col py-4 w-full h-full bg-white rounded-md">
+    <div className="flex flex-col py-4 w-full h-full bg-gray-800 rounded-md">
       <h1
-        className={`${roboto.className} text-4xl font-extrabold text-red-500 text-center`}
+        className={`${roboto.className} text-4xl font-extrabold text-white text-center`}
       >
         T20 Batting!
       </h1>

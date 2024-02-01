@@ -12,7 +12,6 @@ import {
   CategoryScale,
   PointElement,
   ChartOptions,
-  Point,
 } from "chart.js";
 
 Chart.register(
@@ -103,10 +102,8 @@ export function ScatterGraph({ data }: GraphDataPoints) {
     },
   };
   return (
-    <Scatter
-      data={scatterData}
-      options={scatterOptions}
-      style={{ height: 400, width: 400 }}
-    />
+    <div className="w-full h-full md:col-span-2 relative lg:h-[70vh] m-auto p-4 border rounded-lg bg-white">
+      <Scatter data={scatterData} options={scatterOptions} />{" "}
+    </div>
   );
 }
