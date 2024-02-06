@@ -29,7 +29,7 @@ export function ScatterGraph({ data }: GraphDataPoints) {
   const scatterData = {
     datasets: [
       {
-        label: "T20 Batting Data",
+        label: "Batting",
         data: data,
         backgroundColor: "rgba(255, 99, 132, 1)",
         borderColor: "rgba(255, 99, 132, 1)",
@@ -45,19 +45,19 @@ export function ScatterGraph({ data }: GraphDataPoints) {
         title: {
           display: true,
           text: "Fours",
-          color: "#000000",
+          color: "#FFFFFF",
           font: {
             size: 16,
           },
         },
         ticks: {
-          color: "#000000",
+          color: "#FFFFFF",
           font: {
             size: 16,
           },
         },
         grid: {
-          color: "#000000",
+          color: "#FFFFFF",
           lineWidth: 0.25,
         },
       },
@@ -67,19 +67,19 @@ export function ScatterGraph({ data }: GraphDataPoints) {
         title: {
           display: true,
           text: "Sixes",
-          color: "#000000",
+          color: "#FFFFFF",
           font: {
             size: 16,
           },
         },
         ticks: {
-          color: "000000",
+          color: "#FFFFFF",
           font: {
             size: 16,
           },
         },
         grid: {
-          color: "#000000",
+          color: "#FFFFFF",
           lineWidth: 0.25,
         },
       },
@@ -102,7 +102,7 @@ export function ScatterGraph({ data }: GraphDataPoints) {
     },
   };
   return (
-    <div className="w-full h-full md:col-span-2 relative lg:h-[70vh] m-auto p-4 border rounded-lg bg-white">
+    <div className="w-full h-full md:col-span-2 relative lg:h-[70vh] m-auto p-4 border border- rounded-lg bg-gray-800">
       <Scatter data={scatterData} options={scatterOptions} />{" "}
     </div>
   );

@@ -7,7 +7,7 @@ import { BarChart } from "./BarChart";
 import { HeadToHead } from "./HeadToHead";
 import { ScatterDataPoint } from "../../lib/definitions";
 
-export default function ChartTabs({ data }: ScatterDataPoint[]) {
+export default function ChartTabs({ data }: any) {
   let tabData = [
     {
       value: "One Metric",

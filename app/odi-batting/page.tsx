@@ -4,6 +4,7 @@ import { roboto } from "../ui/fonts";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Player } from "../lib/definitions";
+import ChartTabs from "../ui/components/ChartTabs";
 
 export default function ODIBatting() {
   const [players, setPlayers] = useState<Player[]>([]);
@@ -23,10 +24,13 @@ export default function ODIBatting() {
   }, []);
 
   return (
-    <div className="flex justify-around py-4 w-full h-full bg-gray-800 rounded-md">
-      <h1 className={`${roboto.className} text-4xl font-extrabold text-white`}>
+    <div className="flex flex-col py-4 w-full h-full bg-gray-800 rounded-md">
+      <h1
+        className={`${roboto.className} text-4xl font-extrabold text-white text-center`}
+      >
         ODI Batting
       </h1>
+      <ChartTabs />
     </div>
   );
 }

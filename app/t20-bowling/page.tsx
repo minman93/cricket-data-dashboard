@@ -24,10 +24,13 @@ export default function T20Bowling() {
   }, []);
 
   return (
-    <div className="flex justify-around py-4 w-full h-full bg-gray-800 rounded-md">
-      <h1 className={`${roboto.className} text-4xl font-extrabold text-white`}>
+    <div className="flex flex-col py-4 w-full h-full bg-gray-800 rounded-md">
+      <h1
+        className={`${roboto.className} text-4xl font-extrabold text-white text-center`}
+      >
         T20 Bowling
       </h1>
+      <ChartTabs />
     </div>
   );
 }
