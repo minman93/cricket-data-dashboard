@@ -28,3 +28,7 @@ export type ScatterDataPoint = {
 export type GraphDataPoints = {
   data: ScatterDataPoint[];
 };
+
+export type PlayerData = {
+  data: Player[];
+};

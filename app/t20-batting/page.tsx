@@ -9,6 +9,8 @@ import ChartTabs from "../ui/components/ChartTabs";
 
 export default function T20Batting() {
   const [players, setPlayers] = useState<Player[]>([]);
+  const [x, setX] = useState("");
+  const [y, setY] = useState("");
 
   useEffect(() => {
     const fetchPlayers = async () => {

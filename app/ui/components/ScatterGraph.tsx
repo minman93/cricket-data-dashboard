@@ -1,6 +1,10 @@
 "use client";
 
-import { ScatterDataPoint, GraphDataPoints } from "../../lib/definitions";
+import {
+  ScatterDataPoint,
+  GraphDataPoints,
+  PlayerData,
+} from "../../lib/definitions";
 
 import React from "react";
 import {
@@ -14,6 +18,16 @@ import {
   ChartOptions,
 } from "chart.js";
 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  SelectGroup,
+  SelectLabel,
+} from "../../../components/ui/select";
+
 Chart.register(
   ScatterController,
   LinearScale,
@@ -25,7 +39,7 @@ Chart.register(
 
 import { Scatter } from "react-chartjs-2";
 
-export function ScatterGraph({ data }: GraphDataPoints) {
+export function ScatterGraph({ data }: PlayerData) {
   const scatterData = {
     datasets: [
       {
@@ -101,9 +115,44 @@ export function ScatterGraph({ data }: GraphDataPoints) {
       },
     },
   };
+
   return (
-    <div className="w-full h-full md:col-span-2 relative lg:h-[70vh] m-auto p-4 border border- rounded-lg bg-gray-800">
-      <Scatter data={scatterData} options={scatterOptions} />{" "}
+    <div className="w-full h-full md:col-span-2 lg:h-[70vh] m-auto p-4 bg-gray-800">
+      <div>
+        <Scatter data={scatterData} options={scatterOptions} />{" "}
+      </div>
+      <div className="flex flex-row justify-start p-4">
+        <Select>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Select Y Axis Metric" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Select Y Axis Metric</SelectLabel>
+              <SelectItem value="apple">Apple</SelectItem>
+              <SelectItem value="banana">Banana</SelectItem>
+              <SelectItem value="blueberry">Blueberry</SelectItem>
+              <SelectItem value="grapes">Grapes</SelectItem>
+              <SelectItem value="pineapple">Pineapple</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+        <Select>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Select X Axis Metric" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Select X Axis Metric</SelectLabel>
+              <SelectItem value="apple">Apple</SelectItem>
+              <SelectItem value="banana">Banana</SelectItem>
+              <SelectItem value="blueberry">Blueberry</SelectItem>
+              <SelectItem value="grapes">Grapes</SelectItem>
+              <SelectItem value="pineapple">Pineapple</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      </div>
     </div>
   );
 }

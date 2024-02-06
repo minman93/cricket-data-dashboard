@@ -11,6 +11,16 @@ import {
   Legend,
   ChartOptions,
 } from "chart.js";
+import { PlayerData } from "@/app/lib/definitions";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  SelectGroup,
+  SelectLabel,
+} from "../../../components/ui/select";
 
 ChartJS.register(
   CategoryScale,
@@ -21,7 +31,7 @@ ChartJS.register(
   Legend
 );
 
-export function BarChart({ data }: any) {
+export function BarChart({ data }: PlayerData) {
   const chartData = {
     labels: [
       "One",
@@ -64,8 +74,40 @@ export function BarChart({ data }: any) {
     responsive: true,
   };
   return (
-    <div className="w-full md:col-span-2 relative lg:h-[70vh] m-auto p-4 border rounded-lg bg-gray-800">
+    <div className="w-full md:col-span-2 relative lg:h-[70vh] m-auto p-4 bg-gray-800">
       <Bar data={chartData} options={chartOptions} />
+      <div className="flex flex-row">
+        <Select>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Select Y Axis Metric" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Select Y Axis Metric</SelectLabel>
+              <SelectItem value="apple">Apple</SelectItem>
+              <SelectItem value="banana">Banana</SelectItem>
+              <SelectItem value="blueberry">Blueberry</SelectItem>
+              <SelectItem value="grapes">Grapes</SelectItem>
+              <SelectItem value="pineapple">Pineapple</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+        <Select>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Select X Axis Metric" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Select X Axis Metric</SelectLabel>
+              <SelectItem value="apple">Apple</SelectItem>
+              <SelectItem value="banana">Banana</SelectItem>
+              <SelectItem value="blueberry">Blueberry</SelectItem>
+              <SelectItem value="grapes">Grapes</SelectItem>
+              <SelectItem value="pineapple">Pineapple</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      </div>
     </div>
   );
 }
